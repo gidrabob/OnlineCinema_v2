@@ -9,7 +9,6 @@ namespace OnlineCinema_v2.Models
         [Required]
         public DateTime SessionTime { get; set; }
 
-        public Film? Film { get; set; }
         public virtual IEnumerable<Film> Films { get; set; } = [];
     }
 }

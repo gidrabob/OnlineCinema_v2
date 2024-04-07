@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Session>
+
+@{
+	ViewData["Title"] = "Session";
+}
+
+<h1>Sessions</h1>
+
+@if (Model.Count() > 0)
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.SessionTime)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.SessionTime)
+					</td>
+
+												<td>
+								<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+										<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+							</td>
+						</tr>
+			}
+			</tbody>
+		</table>
+			<div class="btn-toolbar justify-content-between">
+				<div class="btn-group">
+						<a class="btn btn-primary width-200-px" asp-action="Index" asp-controller="Home">Back to home page</a>
+				</div>
+			</div>
+}
+else
+{
+	<h1>No directors found!</h1>
+}

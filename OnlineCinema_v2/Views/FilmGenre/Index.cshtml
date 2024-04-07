@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Director>
+﻿@model IEnumerable<FilmGenre>
 
 @{
-	ViewData["Title"] = "Director";
+	ViewData["Title"] = "Film Genre";
 }
 
-<h1>Directors</h1>
+<h1>Film Genres</h1>
 
 @if (Model.Count() > 0)
 {
@@ -16,7 +16,7 @@
 				</th>
 
 				<th>
-					@Html.DisplayNameFor(model => model.BirthDate)
+					@Html.DisplayNameFor(model => model.Description)
 				</th>
 				<th></th>
 			</tr>
@@ -29,11 +29,10 @@
 						@Html.DisplayFor(modelItem => item.Name)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.BirthDate)
+						@Html.DisplayFor(modelItem => item.Description)
 					</td>
 					<td>
-						<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-								<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+						<a asp-action="Index" asp-route-id="@item.Id">Back to main page</a>S
 					</td>
 				</tr>
 			}
@@ -41,7 +40,7 @@
 	</table>
 		<div class="btn-toolbar justify-content-between">
 			<div class="btn-group">
-					<a class="btn btn-primary width-200-px" asp-action="Index" asp-controller="Home">Back to home page</a>
+					<a class="btn btn-primary width-200-px" asp-action="Create" asp-controller="Film">Add Film</a>
 			</div>
 		</div>
 }

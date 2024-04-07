@@ -22,8 +22,6 @@ namespace OnlineCinema_v2.Models
         public int SessionId { get; set; }
 
         public virtual Director? Director { get; set; }
-        //public virtual FilmGenre? FilmGenres { get; set; }
-
         public virtual IEnumerable<FilmGenre> FilmGenres { get; set; } = [];
         public virtual IEnumerable<Session> Sessions { get; set; } = [];
     }

@@ -15,9 +15,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\FilmGenre\" />
-    <Folder Include="Views\Session\" />
-  </ItemGroup>
-
 </Project>
