@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Director>
+
+@{
+	ViewData["Title"] = "Director";
+}
+
+<h1>Directors</h1>
+
+@if (Model.Count() > 0)
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Name)
+				</th>
+
+				<th>
+					@Html.DisplayNameFor(model => model.BirthDate)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Name)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.BirthDate)
+					</td>
+					<td>
+						<a asp-action="Index" asp-route-id="@item.Id">Back to main page</a>S
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+		<div class="btn-toolbar justify-content-between">
+			<div class="btn-group">
+					<a class="btn btn-primary width-200-px" asp-action="Create" asp-controller="Film">Add Film</a>
+			</div>
+		</div>
+}
+else
+{
+	<h1>No directors found!</h1>
+}
